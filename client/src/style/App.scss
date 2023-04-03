@@ -1,4 +1,9 @@
-@use "./partials/Form.scss";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+// @use "./partials/Form.scss";
 
 .logo{
     margin-left: 15px;

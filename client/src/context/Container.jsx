@@ -11,7 +11,8 @@ const [state, dispatch]=useReducer(Reducer,initialState)
 useEffect(()=>{
 // axios.get("/posts").then(res=>{
 //     if(){
-      dispatch(api.getPosts())
+   // {type:"FETCH_ALL", payload:res.data.data}
+    api.getPosts(dispatch)
 // })
 },[])
 return (

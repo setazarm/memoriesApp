@@ -6,10 +6,11 @@ import axios from "axios"
 
 //crud
 
- export const getPosts= async()=>{
+ export const getPosts= async (dispatch)=>{
     try{
         const res= await fetchPosts()
-       return ({type:"FETCH_ALL", payload:res.data.data})
+        console.log(res)
+       dispatch ({type:"FETCH_ALL", payload:res.data.data})
     
     }catch(err){
         console.log(err.message)
@@ -17,10 +18,10 @@ import axios from "axios"
 }
 
 
-export const addPost=async (post)=>{
+export const addPost=async (post,dispatch)=>{
     try {
         const res= await createPost(post)
-        return({type:"CREATE", payload:res.data.data})
+        dispatch({type:"CREATE", payload:res.data.data})
     } catch (err) {
         
     }
